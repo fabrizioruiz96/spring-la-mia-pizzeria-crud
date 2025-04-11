@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="~{fragments/header :: head}"></div>
+    <title>Crocca - Aggiungi pizza</title>
+</head>
+
+<body style="background-color:#DB4718">
+
+    <div th:replace="~{fragments/navbar :: nav}"></div>
+
+    <main class="container d-flex justify-content-center text-center">
+        
+        <div class="row">
+            <div class="col my-5">
+                <h1>Aggiungi Pizza</h1>
+                <hr>
+            </div>
+
+            <form id="pizza-form" th:object="${pizza}" th:action="@{/pizzas/create}" method="post">
+
+                <div class="col mb-3">
+                    <label for="inputName" class="form-label">Inserisci il nome</label>
+                    <input type="text" class="form-control" id="inputName" th:field="*{name}" th:errorClass="is-invalid">
+                </div>
+
+                <div class="col mb-3">
+                    <label for="inputDescription" class="form-label">Inserisci gli ingredienti</label>
+                    <input type="text" class="form-control" id="inputDescription" th:field="*{description}" th:errorClass="is-invalid">
+                </div>
+
+                <div class="col mb-3">
+                    <label for="inputImage" class="form-label">Inserisci la foto (URL)</label>
+                    <input type="text" class="form-control" id="inputImage" th:field="*{img}" th:errorClass="is-invalid">
+                </div>
+
+                <div class="col mb-4">
+                <label for="inputPrice" class="form-label">Inserisci il prezzo</label>
+                    <input type="text" class="form-control" id="inputPrice" th:field="*{price}" th:errorClass="is-invalid">
+                </div>
+
+                <!-- BOTTONI -->
+                <div class="col d-flex justify-content-around align-items-center">
+                    <div>
+                        <a th:href="@{/pizzas}" class="btn btn-dark"><- Indietro</a>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-lg">Salva</button>
+                    <div>
+                        <a th:href="@{/pizzas/create}" class="btn btn-dark">Cancella</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <div th:replace="~{fragments/header :: bootstrapScript}"></div>
+</body>
+
+</html>

@@ -3,10 +3,10 @@
 
 <body>
 
-    <nav th:fragment="nav" class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <nav th:fragment="nav" class="navbar navbar-expand-lg" style="background-color: #3c3f30;" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand me-5" href="/pizzas">
-                <span class="display-6">Pizzeria Bella Napoli</span>
+                <img src="https://crocca.it/wp-content/uploads/2021/03/logo-crocca.svg" alt="logo-crocca" width="200">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/pizzas">Le nostre pizze</a>
+                        <a class="nav-link" th:href="@{/pizzas}">Le nostre pizze</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/pizzas/create}">Aggiungi Pizza</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Chi siamo</a>
