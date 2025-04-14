@@ -3,7 +3,7 @@
 
 <head>
     <div th:replace="~{fragments/header :: head}"></div>
-    <title>Crocca - Aggiungi pizza</title>
+    <title>Crocca - Modifica pizza</title>
 </head>
 
 <body style="background-color:#ff8800a9">
@@ -14,11 +14,11 @@
         
         <div class="row">
             <div class="col my-5">
-                <h1>Aggiungi Pizza</h1>
+                <h1>Modifica Pizza</h1>
                 <hr>
             </div>
 
-            <form id="pizza-form" th:object="${pizza}" th:action="@{/pizzas/create}" method="post">
+            <form id="pizza-form" th:object="${pizza}" th:action="@{|/pizzas/edit/${pizza.id}|}" method="post">
 
                 <div class="col mb-3">
                     <label for="inputName" class="form-label">Inserisci il nome</label>
